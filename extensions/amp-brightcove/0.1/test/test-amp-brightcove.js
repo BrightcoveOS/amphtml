@@ -98,4 +98,16 @@ describe('amp-brightcove', () => {
       expect(params).to.contain('myParam=hello%20world');
     });
   });
+
+  it('should add attributes to iframe src', () => {
+    return getBrightcove({
+      'data-account': '906043040001',
+      'data-video-id': 'ref:ampdemo',
+      'muted': '',
+    }).then(bc => {
+      const iframe = bc.querySelector('iframe');
+      const params = parseUrl(iframe.src).search.split('&');
+      expect(params).to.contain('muted=true');
+    });
+  })
 });

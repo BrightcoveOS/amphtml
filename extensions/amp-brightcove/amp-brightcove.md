@@ -93,6 +93,18 @@ Keys and values will be URI encoded. Keys will be camel cased.
 - `data-param-language="de"` becomes `&language=de`
 - `data-param-custom-ad-data="key:value;key2:value2"` becomes `&customAdData=key%3Avalue%3Bkey2%3Avalue2`
 
+**autoplay**
+
+Automatically start playback. Browsers may restrict automatic playback, for example only permit if the video is muted.
+
+**muted**
+
+Mute the player.
+
+**playsinline**
+
+On iOS 10, indicates that the video should play inline instead of fullscreen.
+
 ## Player configuration
 
 This script should be added to the configuration of Brightcove Players used with this component. This allows the AMP document to pause the player. Only the script need be added, no plugin name or JSON are needed.

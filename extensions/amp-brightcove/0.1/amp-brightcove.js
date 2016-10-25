@@ -65,6 +65,13 @@ class AmpBrightcove extends AMP.BaseElement {
       src += this.encodeId_(this.element.getAttribute('data-video-id'));
     }
 
+    // Add standard attributes for convenience (data-param-muted would also work)
+    ['autoplay', 'muted', 'playsinline'].forEach((e, i, a) => {
+      if (this.element.hasAttribute(e)) {
+        src += `&${e}=true`;
+      }
+    });
+
     // Pass through data-param-* attributes as params for plugin use
     src = addParamsToUrl(src, getDataParamsFromAttributes(this.element));
     iframe.setAttribute('frameborder', '0');
